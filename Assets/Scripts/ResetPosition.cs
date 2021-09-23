@@ -10,8 +10,6 @@ public class ResetPosition : MonoBehaviour
     public Vector3 originalPosition = Vector3.zero;
     public Quaternion originalRotation = Quaternion.identity;
 
-    private bool hasBeenInteracted = false;
-
     // Start is called before the first frame update
     void Awake()
     {
@@ -22,11 +20,6 @@ public class ResetPosition : MonoBehaviour
 
     public void SavePosition(XRBaseInteractor interactor)
     {
-        //if (!hasBeenInteracted)
-        //{
-            
-        //    hasBeenInteracted = true;
-        //}
         originalPosition = transform.position;
         originalRotation = transform.rotation;
         Debug.Log("function called: save position");

@@ -44,9 +44,7 @@ public class RotateMenuController : MonoBehaviour
     }
 
     public IEnumerator DelayRotation()
-    {
-
-
+    {   
         actions.EnableMeshRenderer();
         
         yield return new WaitForSeconds(waitTime);

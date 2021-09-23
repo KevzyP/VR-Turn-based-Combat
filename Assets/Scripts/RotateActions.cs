@@ -7,16 +7,16 @@ public class RotateActions : MonoBehaviour
 {
     public float defaultSpeed;
     public float delayTime;
-    
+    public bool isGrabbing;
+
+
+    public Transform gameobjectTransform;
+    public InputActionReference rotateReference;
+
     private float _currentTime = 0;
     private bool _menuMoved;
     private bool _joystickMoved = false;
 
-    public Transform gameobjectTransform;
-
-    public InputActionReference rotateReference;
-
-    
     // Start is called before the first frame update
     void Start()
     {
@@ -30,7 +30,6 @@ public class RotateActions : MonoBehaviour
     {
         float movementAmount = rotateReference.action.ReadValue<float>();
         InputRotate(movementAmount);
-        //Debug.Log("Axis value = " + movementAmount);
     }
 
     private void JoystickRotate(InputAction.CallbackContext context)
@@ -41,7 +40,7 @@ public class RotateActions : MonoBehaviour
 
     public void InputRotate(float absoluteSpeed)
     {
-        if (_joystickMoved == true)
+        if (_joystickMoved == true && isGrabbing != true)
         {
             if (absoluteSpeed > 0.1f)
             {
