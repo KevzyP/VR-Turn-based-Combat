@@ -18,13 +18,13 @@ public class Hand : MonoBehaviour
         
     }
 
-    public void WeaponGrab()
+    public void KatanaWeaponGrab()
     {
-        _animator.SetBool("IsGrabbed", true);
+        _animator.SetBool("GrabKatana", true);
     }
-    public void WeaponRelease()
+    public void KatanaWeaponRelease()
     {
-        _animator.SetBool("IsGrabbed", false);
+        _animator.SetBool("GrabKatana", false);
     }
 
     

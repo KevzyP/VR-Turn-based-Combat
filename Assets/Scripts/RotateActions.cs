@@ -30,7 +30,7 @@ public class RotateActions : MonoBehaviour
     {
         float movementAmount = rotateReference.action.ReadValue<float>();
         InputRotate(movementAmount);
-        Debug.Log("Axis value = " + movementAmount);
+        //Debug.Log("Axis value = " + movementAmount);
     }
 
     private void JoystickRotate(InputAction.CallbackContext context)
@@ -76,7 +76,7 @@ public class RotateActions : MonoBehaviour
     {
         if (_currentTime < delayTime)
         {
-            _currentTime = _currentTime + Time.deltaTime;
+            _currentTime += Time.deltaTime;
         }
         if (_currentTime >= delayTime)
         {
@@ -87,6 +87,7 @@ public class RotateActions : MonoBehaviour
 
     public void AutoRotate()
     {
+        float tempSpeed = defaultSpeed;
         gameobjectTransform.transform.Rotate(0f, defaultSpeed, 0f, Space.Self);
     }
 }

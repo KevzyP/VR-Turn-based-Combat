@@ -5,7 +5,7 @@ using UnityEngine;
 public class HandController : MonoBehaviour
 {
     public Hand hands;
-    public 
+     
 
 
     // Start is called before the first frame update
